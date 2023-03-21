@@ -22,5 +22,10 @@
         {
             return _course;
         }
+
+        public void WriteCourse()
+        {
+            Console.WriteLine($"Navn: {_name}\nAlder: {_age}\nKurs: {_course}\n\n");
+        }
     }
 }

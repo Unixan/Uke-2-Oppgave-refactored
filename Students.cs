@@ -20,8 +20,6 @@
                 student.GetName();
             }
         }
-
-
         public string[] GetFilterList()
         {
             List<string> temp = new List<string>();
@@ -33,6 +31,14 @@
                 }
             }
             return temp.ToArray();
+        }
+
+        public void GetFilterCourse(string selection)
+        {
+            foreach (var student in _students.Where(student => student.GetCourse() == selection))
+            {
+                student.WriteCourse();
+            }
         }
 
        
