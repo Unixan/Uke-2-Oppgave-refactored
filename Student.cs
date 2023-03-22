@@ -2,9 +2,9 @@
 {
     internal class Student
     {
-        private string _name;
-        private int _age;
-        private string _course;
+        private readonly string _name;
+        private readonly int _age;
+        private readonly string _course;
 
         public Student(string name, int age, string course)
         {
@@ -13,7 +13,7 @@
             _course = course;
         }
 
-        public void GetName()
+        public void WriteName()
         {
             Console.WriteLine(_name);
         }
