@@ -2,7 +2,7 @@
 {
     internal class Students
     {
-        private List<Student> _students;
+        private readonly List<Student> _students;
 
         public Students()
         {
@@ -22,13 +22,10 @@
         }
         public string[] GetFilterList()
         {
-            List<string> temp = new List<string>();
-            foreach (var student in _students)
+            var temp = new List<string>();
+            foreach (var student in _students.Where(student => !temp.Contains(student.GetCourse())))
             {
-                if (!temp.Contains(student.GetCourse()))
-                {
-                    temp.Add(student.GetCourse());
-                }
+                temp.Add(student.GetCourse());
             }
             return temp.ToArray();
         }
